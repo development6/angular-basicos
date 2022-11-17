@@ -1,9 +1,7 @@
 import { Component} from '@angular/core';
+import { Personaje } from '../interfaces/dbz.interface';
 
-interface Personaje{
-  nombre: string;
-  poder: number
-}
+
 
 @Component({
   selector: 'app-main-page',
@@ -23,26 +21,21 @@ export class MainPageComponent {
     }
   ];
 
-  nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+  nuevo:Personaje={
+    nombre: "Maestro Roshi",
+    poder: 7500
   }
 
-  cambiarNombre(event: any){
-    console.log(event.target.value);
-  }
+  // cambiarNombre(event: any){
+  //   console.log(event.target.value);
+  // }
 
-  agregar(){
-    if(this.nuevo.nombre.trim().length === 0){
-      return;
-    }
-    console.log(this.nuevo);
-
-    this.personajes.push(this.nuevo);
-    this.nuevo={
-      nombre:'',
-      poder:0
-    }
+  agregarNuevoPersonaje(argumento: Personaje){
+    //console.log("Main page component")
+    this.personajes.push(argumento);
   }
 
 }
+
+//@Outpout cuando un componente hijo necestita emitir un valor al padre, es lo opuesto al @Input
+//@Outpout sirve para emitir eventos
