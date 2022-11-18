@@ -40,3 +40,5 @@ export class MainPageComponent {
 
 //@Outpout cuando un componente hijo necestita emitir un valor al padre, es lo opuesto al @Input
 //@Outpout sirve para emitir eventos
+
+//ng build --configuration production  //para desplegar a produccion
